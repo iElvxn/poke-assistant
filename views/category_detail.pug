@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1= title
+  p= description
+  div(class="ingredient-list-container")
+    if ingredients_list.length
+      each ingredient in ingredients_list
+        div(class="ingredient-container")
+          a(href= ingredient.url)= ingredient.name
+          p $#{ingredient.price}
+          p Quantity: #{ingredient.quantity}
+  a(href= category.url+'/delete') 
+    p Delete
+  a(href= category.url+'/update') 
+    p Update
+
+
+
+

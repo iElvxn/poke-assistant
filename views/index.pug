@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  div.main-container
+    div.header
+      h1
+        span.green-text Your Pantry
+    div.status-container
+      div.status-info
+        div.blue-text Status
+        div 
+          span.yellow-text Total Ingredients: 
+          =totalIngredients
+        div 
+          span.purple-text Total Categories: 
+          =totalCategories
+

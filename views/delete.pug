@@ -1,0 +1,29 @@
+extends layout
+
+block content
+
+  h1 Delete #{title}: #{object.name}
+  if object.price
+    p Do you really want to delete this #{title}?
+
+    form(method='POST')
+      div.form-group
+        input#objectid.form-control(type='hidden', name=`objectid`, value=object._id )
+
+      button.btn.btn-primary(type='submit') Delete
+  else
+    if ingredients.length != 0
+      p Delete these ingredients first:
+      ul
+        each ingredient in ingredients
+          a(href=ingredient.url)
+            li=ingredient.name
+    else
+      p Do you really want to delete this #{title}?
+
+      form(method='POST')
+        div.form-group
+          input#objectid.form-control(type='hidden', name=`objectid`, value=object._id )
+
+        button.btn.btn-primary(type='submit') Delete
+

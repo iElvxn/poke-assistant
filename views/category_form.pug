@@ -1,0 +1,16 @@
+extend layout
+block content
+  form(method='POST')
+    div.form-group
+      label(for='name') Category Name:
+      if category
+        input#name.form-control(type='text', placeholder='Name of Category' name='name' required value= category.name)
+      else
+        input#name.form-control(type='text', placeholder='Name of Category' name='name' required)
+    div.form-group
+      label(for='description') Description:
+      if category.description
+        input#description.form-control(type='text', placeholder='Description' name='description' value=category.description)
+      else
+        input#description.form-control(type='text', placeholder='Description' name='description')
+    button.btn.btn-primary(type='submit') Submit

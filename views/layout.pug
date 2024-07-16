@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    title Pal Pantry
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    style.
+      .navbar-nav {
+        margin-left: auto;
+      }
+      .navbar {
+        background-color: #000000; /* Black background */
+      }
+      .navbar-brand,
+      .navbar-nav .nav-link {
+        color: #ffffff !important; /* White text */
+        font-family: "Pixelify Sans", sans-serif;
+      }
+      .navbar-nav .nav-link.active {
+        color: #ffffff !important; /* Active link color */
+      }
+  body
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+      a.navbar-brand(href="/") 
+        span.purple-text PalPantry
+      button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
+        span.navbar-toggler-icon
+      .collapse.navbar-collapse#navbarNav
+        ul.navbar-nav
+          li.nav-item.active
+            a.nav-link(href="/ingredient") 
+              span.yellow-text Ingredients
+          li.nav-item
+            a.nav-link(href="/category") 
+              span.red-text Categories
+    script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js")
+    block content

@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  div(class="main-container")
+    div.header
+      h1= title
+      a(href="/ingredient/create") 
+        img(class="add-btn" src="/images/add.png")
+    div(class="ingredient-list-container")
+      if ingredients_list.length
+        each ingredient in ingredients_list
+          div.ingredient-container
+            a(href= ingredient.url)= ingredient.name
+            p $#{ingredient.price}
+            p Quantity: #{ingredient.quantity}
+

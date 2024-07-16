@@ -1,0 +1,12 @@
+extends layout
+block content
+  div(class="main-container")
+    div.header
+      h1 Categories
+      a(href="/category/create") 
+        img(class="add-btn" src="/images/add.png")
+    div(class="categories-container")
+      if categoryList.length
+        each category in categoryList
+          div(class="category-container")
+            a(href=category.url)= category.name

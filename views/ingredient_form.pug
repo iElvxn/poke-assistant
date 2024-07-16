@@ -1,0 +1,41 @@
+extend layout
+block content
+  form(method='POST' enctype="multipart/form-data")
+    div.form-group
+      label(for='name') Name:
+      if ingredient
+        input#name.form-control(type='text', value=ingredient.name, name='name' required)
+      else
+        input#name.form-control(type='text', placeholder='Name of Ingredient' name='name' required)
+    div.form-group
+      label(for='category') Category:
+      select#category.form-control(multiple name='category')
+        option(value='') --Please select categories--
+        each category in categories
+          -let isSelected = false
+          if ingredient
+            -isSelected = ingredient.category.some(categoryObj => categoryObj.name == category.name)
+          option(value=category._id selected=isSelected)= category.name
+    div.form-group
+      label(for='description') Description:
+      if ingredient && ingredient.description
+        input#description.form-control(type='text', placeholder='Description' name='description' value=ingredient.description)
+      else
+        input#description.form-control(type='text', placeholder='Description' name='description')
+    div.form-group
+      label(for='quantity') Quantity:
+      if ingredient && ingredient.quantity
+        input#quantity.form-control(type='number', placeholder='Quantity', name='quantity', required, value=ingredient.quantity)
+      else
+        input#quantity.form-control(type='number', placeholder='Quantity' name='quantity' required)
+    div.form-group
+      label(for='price') Price:
+      if ingredient && ingredient.price
+        input#price.form-control(type='double', placeholder='Price' name='price' required value=ingredient.price)
+      else
+        input#price.form-control(type='double', placeholder='Price' name='price' required)
+    <div class="form-group">
+      <label for="uploaded_file">Upload Image</label>
+      <input type="file" name="uploaded_file" id="uploaded_file" accept="image/*">
+    </div>
+    button.btn.btn-primary(type='submit') Submit

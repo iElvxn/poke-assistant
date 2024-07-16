@@ -1,0 +1,12 @@
+extend layout
+block content
+  p(class="title")= ingredient.name
+  p(class="sub-title")= categoryString
+  div(class="detail-container")
+    p= ingredient.description
+    p $#{ingredient.price}
+    p Quantity: #{ingredient.quantity}
+    a(href= ingredient.url+'/delete') 
+        p Delete
+    a(href= ingredient.url+'/update')
+        p Update
