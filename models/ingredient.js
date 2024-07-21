@@ -7,6 +7,7 @@ const IngredientSchema = new Schema({
     quantity: {type: Number, required: true},
     category: [{ type: Schema.Types.ObjectId, ref: "Category" }],
     price: { type: Number, required: true},
+    img: { type: String},
 });
 
 IngredientSchema.virtual("url").get(function () {

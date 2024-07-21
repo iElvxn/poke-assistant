@@ -11,7 +11,7 @@ exports.category_list = asyncHandler(async (req, res, next) => {
 exports.category_details = asyncHandler(async (req, res, next) => {
     const id = req.params.id;
     const category = await Category.findById(id).exec();
-    const ingredients = await Ingredient.find({ category: id }, "name quantity price").sort({ name: 1 }).exec();
+    const ingredients = await Ingredient.find({ category: id }).sort({ name: 1 }).exec();
 
     res.render("category_detail", {
         title: category.name,

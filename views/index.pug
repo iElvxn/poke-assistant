@@ -14,4 +14,20 @@ block content
         div 
           span.purple-text Total Categories: 
           =totalCategories
+    section.chat-section
+      div.chat-container
+        if(msgs && msgs.length > 0)
+          each msg in msgs
+            if(msg.role == 'user')
+              div.msg-container
+                pre.user-msg= msg.content
+            if(msg.role == 'assistant')
+              div.msg-container
+                pre.red-text= msg.content
+      div.chat-textbox
+        p.red-text.title Chat With Your Pantry Pal
+          form(id="chat-form" method="POST")
+            label.purple-text(for="message")= "Enter your message: "
+            input(type="text" id="message" name="message" required value = "")
+            button.green-text(type="submit") Send
 

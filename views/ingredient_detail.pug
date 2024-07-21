@@ -1,12 +1,16 @@
 extend layout
 block content
-  p(class="title")= ingredient.name
-  p(class="sub-title")= categoryString
-  div(class="detail-container")
-    p= ingredient.description
-    p $#{ingredient.price}
-    p Quantity: #{ingredient.quantity}
-    a(href= ingredient.url+'/delete') 
-        p Delete
-    a(href= ingredient.url+'/update')
-        p Update
+  div.main-container
+    div.detail-container
+      div.details
+        div.header
+          div(class="detail-title blue-text")= ingredient.name
+          a(href= ingredient.url+'/update')
+            img.icon(src="/images/edit.png")
+          a(href= ingredient.url+'/delete')
+            img.icon(src="/images/delete.png")
+        p(class="sub-title red-text")= categoryString
+        p.purple-text= ingredient.description
+        p.green-text Price: $#{ingredient.price}
+        p.yellow-text Quantity: #{ingredient.quantity}
+      img.detail-img(src=ingredient.img)
