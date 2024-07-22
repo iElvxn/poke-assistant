@@ -19,15 +19,15 @@ block content
         if(msgs && msgs.length > 0)
           each msg in msgs
             if(msg.role == 'user')
-                pre.user-msg= msg.content
+                div.user-msg= msg.content
             if(msg.role == 'assistant')
               div.msg-container
                 img.pantry-pal-img(src="/images/pantrypal.png")
                 pre.purple-text= msg.content
       div.chat-textbox
-        p.red-text.title Chat With Your Pantry Pal
-          form(id="chat-form" method="POST")
+        p.blue-text.title Chat With Your Pantry Pal
+          form.text-box(id="chat-form" method="POST")
             label.purple-text(for="message")= "Enter your message: "
-            input(type="text" id="message" name="message" required value = "")
+            input(type="text" id="message" name="message" placeholder="Message PantryPal" required value = "")
             button.green-text(type="submit") Send
 

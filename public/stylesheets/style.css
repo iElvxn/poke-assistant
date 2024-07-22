@@ -89,7 +89,7 @@ body {
 
 .status-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     width: 100%;
 }
 
@@ -171,6 +171,8 @@ form {
     display: flex;
     flex-direction: column;
     float: right;
+    overflow: hidden;
+    height: 600px;
 }
 
 .chat-container {
@@ -187,7 +189,7 @@ form {
     display: flex;
     flex-direction: row;
     gap: 16px;
-    background-color: rgba(29, 29, 29, 0.589);
+    background-color: rgba(29, 29, 29, 0.774);
     border-radius: 7px;
     padding: 7px;
 }
@@ -210,9 +212,9 @@ form {
     max-width: 100%;
 }
 
-pre {
+pre,
+.user-msg {
     text-wrap: wrap;
-    color: white;
     font-family: "Pixelify Sans", sans-serif;
 }
 
@@ -220,3 +222,38 @@ pre {
     width: 40px;
     height: 40px;
 }
+
+.chat-textbox {
+    padding: 16px;
+    font-family: "Pixelify Sans", sans-serif;
+}
+
+.text-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: center;
+    gap: 16px;
+}
+
+button {
+    background-color: rgba(240, 248, 255, 0);
+    border-style: solid;
+    border-radius: 7px;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    border: 1px solid #d5d5d5;
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: #000000;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background: #494949;
+  }
